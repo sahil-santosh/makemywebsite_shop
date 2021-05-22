@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:makemywebsite_shop/provider/products.dart';
 import 'package:makemywebsite_shop/screens/product_detail_screen.dart';
 import 'package:makemywebsite_shop/screens/product_overview_screen.dart';
@@ -17,6 +18,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
           accentColor: Colors.deepOrange,
+          fontFamily: GoogleFonts.lato().fontFamily,
         ),
         home: ProductOverviewScreen(),
         routes: {
