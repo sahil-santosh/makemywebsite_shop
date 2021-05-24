@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:makemywebsite_shop/provider/cart.dart';
+import 'package:makemywebsite_shop/screens/cart_screen.dart';
 import 'package:makemywebsite_shop/widgets/badge.dart';
 import 'package:makemywebsite_shop/widgets/product_grid.dart';
 import 'package:provider/provider.dart';
@@ -37,23 +38,26 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
               Icons.more_vert,
             ),
             itemBuilder: (_) => [
-                  PopupMenuItem(
-                    child: Text('Only Favorites'),
-                    value: FilterOptions.Favorites,
-                  ),
-                  PopupMenuItem(
-                    child: Text('Show All'),
-                    value: FilterOptions.All,
-                  ),
-                ],
+              PopupMenuItem(
+                child: Text('Only Favorites'),
+                value: FilterOptions.Favorites,
+              ),
+              PopupMenuItem(
+                child: Text('Show All'),
+                value: FilterOptions.All,
+              ),
+            ],
           ),
-          Consumer<Cart>(builder: (_, cart, ch) =>
-          Badge(
-            child: IconButton(
-              icon: Icon(Icons.shopping_cart), onPressed: (){}), 
-            value: cart.itemCount.toString(),
-            ),)
-          
+          Consumer<Cart>(
+            builder: (_, cart, ch) => Badge(
+              child: IconButton(
+                  icon: Icon(Icons.shopping_cart),
+                  onPressed: () {
+                    Navigator.of(context).pushNamed(CartScreen.routeName);
+                  }), //day9
+              value: cart.itemCount.toString(),
+            ),
+          )
         ],
       ),
       body: ProductsGrid(_showOnlyFavorites),

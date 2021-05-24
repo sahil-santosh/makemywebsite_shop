@@ -25,6 +25,7 @@ class Cart with ChangeNotifier {
     return _items.length;
   }
 
+  //for add item to cart
   void addItem(String productId, double price, String title) {
     if (_items.containsKey(productId)) {
       //if item already in the cart, change quantity
@@ -46,5 +47,14 @@ class Cart with ChangeNotifier {
               price: price));
     }
     notifyListeners();
+  }
+
+  //for cart total amount  day9
+  double get totalAmount {
+    var total = 0.0;
+    _items.forEach((key, cartItem) {
+      total += cartItem.price * cartItem.quantity;
+    });
+    return total;
   }
 }
