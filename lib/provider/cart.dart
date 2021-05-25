@@ -57,4 +57,5 @@ class Cart with ChangeNotifier {
     });
     return total;
   }
+  
 }
