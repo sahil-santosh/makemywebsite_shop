@@ -7,6 +7,7 @@ import 'package:makemywebsite_shop/screens/cart_screen.dart';
 import 'package:makemywebsite_shop/screens/order_screen.dart';
 import 'package:makemywebsite_shop/screens/product_detail_screen.dart';
 import 'package:makemywebsite_shop/screens/products_overview_screen.dart';
+import 'package:makemywebsite_shop/screens/user_products_screen.dart';
 import 'package:provider/provider.dart';
 
 void main() => runApp(MyApp());
@@ -39,6 +40,7 @@ class MyApp extends StatelessWidget {
             ProductDetailScreen.routeName: (ctx) => ProductDetailScreen(),
             CartScreen.routeName: (ctx) => CartScreen(),    //day9
             OrderScreen.routeName: (ctx) => OrderScreen(),
+            UserProductsScreen.routeName: (ctx) => UserProductsScreen(),
           },
         ));
   }
