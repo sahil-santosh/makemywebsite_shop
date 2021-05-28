@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:makemywebsite_shop/provider/cart.dart';
+import 'package:makemywebsite_shop/provider/orders.dart';
 import 'package:makemywebsite_shop/provider/products.dart';
 import 'package:makemywebsite_shop/screens/cart_screen.dart';
+import 'package:makemywebsite_shop/screens/order_screen.dart';
 import 'package:makemywebsite_shop/screens/product_detail_screen.dart';
 import 'package:makemywebsite_shop/screens/products_overview_screen.dart';
 import 'package:provider/provider.dart';
@@ -19,7 +21,10 @@ class MyApp extends StatelessWidget {
           ),
           ChangeNotifierProvider(
             create: (ctx) => Cart(),
-          )
+          ),
+          ChangeNotifierProvider(//day13
+            create: (ctx) => Order(),
+          ),
         ],
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
@@ -33,6 +38,7 @@ class MyApp extends StatelessWidget {
           routes: {
             ProductDetailScreen.routeName: (ctx) => ProductDetailScreen(),
             CartScreen.routeName: (ctx) => CartScreen(),    //day9
+            OrderScreen.routeName: (ctx) => OrderScreen(),
           },
         ));
   }

@@ -62,4 +62,10 @@ class Cart with ChangeNotifier {
     _items.remove(productId);
     notifyListeners();
   }
+
+//this function create for when we click order now button cart screen clear
+  void clear() {
+    _items = {};
+    notifyListeners();
+  }
 }

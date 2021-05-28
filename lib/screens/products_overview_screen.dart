@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:makemywebsite_shop/provider/cart.dart';
 import 'package:makemywebsite_shop/screens/cart_screen.dart';
+import 'package:makemywebsite_shop/widgets/app_drawer.dart';
 import 'package:makemywebsite_shop/widgets/badge.dart';
 import 'package:makemywebsite_shop/widgets/product_grid.dart';
 import 'package:provider/provider.dart';
@@ -60,6 +61,7 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
           )
         ],
       ),
+      drawer: AppDrawer(), //day13
       body: ProductsGrid(_showOnlyFavorites),
     );
   }

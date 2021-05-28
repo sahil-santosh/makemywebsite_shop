@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:makemywebsite_shop/provider/cart.dart';
+import 'package:makemywebsite_shop/provider/orders.dart';
+import 'package:makemywebsite_shop/screens/order_screen.dart';
+import 'package:makemywebsite_shop/widgets/app_drawer.dart';
 import 'package:makemywebsite_shop/widgets/cart_item_aa.dart';
 import 'package:provider/provider.dart';
 
@@ -14,6 +17,7 @@ class CartScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text("Your Cart"),
       ),
+      drawer: AppDrawer(),
       body: Column(
         children: [
           Card(
@@ -32,7 +36,11 @@ class CartScreen extends StatelessWidget {
                   TextButton(
                     child: Text("Order Now",style: TextStyle(fontWeight: FontWeight.bold),),
                     style: TextButton.styleFrom(primary: Colors.blue),
-                    onPressed: () {},
+                    onPressed: () {//day13
+                      Provider.of<Order>(context,listen: false).addOrder(cart.items.values.toList(), cart.totalAmount,);
+                      cart.clear();
+                      Navigator.of(context).pushNamed(OrderScreen.routeName);
+                    },
                   ),
                 ],
               ),
