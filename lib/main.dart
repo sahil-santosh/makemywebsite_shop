@@ -4,6 +4,7 @@ import 'package:makemywebsite_shop/provider/cart.dart';
 import 'package:makemywebsite_shop/provider/orders.dart';
 import 'package:makemywebsite_shop/provider/products.dart';
 import 'package:makemywebsite_shop/screens/cart_screen.dart';
+import 'package:makemywebsite_shop/screens/edit_product_screen.dart';
 import 'package:makemywebsite_shop/screens/order_screen.dart';
 import 'package:makemywebsite_shop/screens/product_detail_screen.dart';
 import 'package:makemywebsite_shop/screens/products_overview_screen.dart';
@@ -41,6 +42,7 @@ class MyApp extends StatelessWidget {
             CartScreen.routeName: (ctx) => CartScreen(),    //day9
             OrderScreen.routeName: (ctx) => OrderScreen(),
             UserProductsScreen.routeName: (ctx) => UserProductsScreen(),
+            EditProductScreen.routeName: (ctx) => EditProductScreen(),
           },
         ));
   }
